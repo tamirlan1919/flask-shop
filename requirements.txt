@@ -1,0 +1,4 @@
+flask
+flask-sqlalchemy
+alembic
+python-dotenv
