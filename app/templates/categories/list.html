@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>привет друг</h1>
+
+<h2>Категории</h2>
+
+{% for category in categories %}
+<ul>
+    <li>
+        {{ category.name }}
+        <form action="{{ url_for('categories.delete_category', id = category.id) }}", method="POST">
+            <button type="submit">Удалить</button>
+        </form>
+
+    </li>
+</ul>
+{% endfor %}
+<form method="post">
+    <input type="text" name="name" placeholder="Название категории">
+    <button type="submit">Добавить категорию</button>
+</form>
+    
+
 {% endblock %}
